@@ -11,12 +11,12 @@ public class PatternResolverTest {
     public void getResources() throws Throwable {
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
 
-        //加载com.smart下以.xml为后缀的资源
+        //加载com.smart下以.xml为后缀的资源，查的是class文件所在的路径F:\Spring\code\chapter_4\target\classes\com\smart
         Resource resources[] = resolver.getResources("classpath*:com/smart/**/*.xml");
         assertNotNull(resources);
 
         for (Resource resource : resources) {
-            System.out.println(resource.getFilename());
+            System.out.println(resource.getDescription());
         }
 
     }
