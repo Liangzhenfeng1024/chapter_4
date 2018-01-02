@@ -24,6 +24,22 @@ public class Car implements BeanFactoryAware, BeanNameAware, InitializingBean, D
         System.out.println("brand:" + brand + ";color:" + color + ";maxSpeed:" + maxSpeed);
     }
 
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public int getMaxSpeed() {
+        return maxSpeed;
+    }
+
+    public void setMaxSpeed(int maxSpeed) {
+        this.maxSpeed = maxSpeed;
+    }
+
     //BeanFactoryAware接口方法
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException{
         System.out.println("调用BeanFactoryAware.setBeanFactory()。");
@@ -56,4 +72,6 @@ public class Car implements BeanFactoryAware, BeanNameAware, InitializingBean, D
     public void myDestory() {
         System.out.println("调用destroy-method所指定的myDestory()。");
     }
+
+
 }
